@@ -1,0 +1,9 @@
+<div>
+  <h1>Your Learning Journey Here</h1>
+  <%= simple_form_for @learning do |f|%>
+    <%= f.input :Topic %>
+    <%= f.input :Question %>
+    <br />
+    <%= f.submit 'Post', class: 'btn btn-primary' %>
+  <% end %>
+</div>
