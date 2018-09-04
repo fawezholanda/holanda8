@@ -1,7 +1,11 @@
 <h1> Welcome to your Learning Journey!</h1>
+<br />
 
 <% @learnings.each do |learning| %>
   <div>
-    <h1><%= learning.Topic %><h1>
+    <h2><%= learning.Topic %></h2>
+    <br />
+    <h2><%= learning.Question %></h2>
   </div>
+  <hr>
 <% end %>

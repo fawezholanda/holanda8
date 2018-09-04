@@ -9,7 +9,7 @@ class LearningsController < ApplicationController
   end
 
   def create
-    Place.create(place_params)
+    Learning.create(learning_params)
     redirect_to root_path
   end
 
@@ -19,8 +19,8 @@ class LearningsController < ApplicationController
 
   private
 
-  def place_params
-    params.require(:learnings).permit(:Topic, :Question)
+  def learning_params
+    params.require(:learning).permit(:Topic, :Question)
   end
 
 
