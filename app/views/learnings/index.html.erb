@@ -6,6 +6,10 @@
     <h2><%= learning.Topic %></h2>
     <br />
     <h2><%= learning.Question %></h2>
+
+    <% if learning.user.present? %>
+      <small><%= learning.user.email %></small>
+    <% end %>
   </div>
   <hr>
 <% end %>

@@ -1,4 +1,5 @@
 class LearningsController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :create]
 
   def index
     @learnings = Learning.all
@@ -9,7 +10,7 @@ class LearningsController < ApplicationController
   end
 
   def create
-    Learning.create(learning_params)
+    current_user.learnings.create(learning_params)
     redirect_to root_path
   end
 
