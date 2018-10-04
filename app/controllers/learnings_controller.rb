@@ -2,7 +2,8 @@ class LearningsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create]
 
   def index
-    @learnings = Learning.all
+    @learning = Learning.all
+    @comment = Comment.new
   end
 
   def new
