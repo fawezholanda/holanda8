@@ -19,9 +19,11 @@ ActiveRecord::Schema.define(version: 20181004195820) do
     t.text     "message"
     t.string   "rating"
     t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_comments_on_user_id", using: :btree
+    t.integer  "learning_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["learning_id"], name: "index_comments_on_learning_id", using: :btree
+    t.index ["user_id", "learning_id"], name: "index_comments_on_user_id_and_learning_id", using: :btree
   end
 
   create_table "learnings", force: :cascade do |t|

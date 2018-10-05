@@ -2,7 +2,7 @@ class LearningsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create]
 
   def index
-    @learning = Learning.all
+    @learnings = Learning.all
     @comment = Comment.new
   end
 
@@ -14,8 +14,6 @@ class LearningsController < ApplicationController
     current_user.learnings.create(learning_params)
     redirect_to root_path
   end
-
-  
 
 
 
